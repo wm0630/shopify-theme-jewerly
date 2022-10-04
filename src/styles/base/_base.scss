@@ -1,0 +1,25 @@
+html{
+    font-size: calc(100vw / 1920 * 10); /* 100vw divided by the size of my design*/
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-suisse-bp;
+}
+
+img{
+    max-width: 100%;
+}
+
+figure, img {
+    pointer-events: none; /* Disable save image (right-click) */
+}
+.george{
+    font-family: $font-george-x;
+}
+
+.suisse{
+    font-family: $font-suisse-bp;
+}

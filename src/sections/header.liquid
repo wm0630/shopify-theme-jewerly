@@ -1,0 +1,51 @@
+<div class="header">
+  <!-- <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a> -->
+  <a href="/" itemprop="url" class="header__logo">
+    {% if section.settings.svg_logo != blank %}
+      {{ section.settings.svg_logo }}
+
+    {% elsif section.settings.logo != blank %}
+      {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+      <img src="{{ section.settings.logo | img_url: image_size }}"
+            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+            alt="{{ section.settings.logo.alt | default: shop.name }}"
+            itemprop="logo">
+
+    {% else %}
+      <h1>{{ shop.name }}</h1>
+    {% endif %}
+  </a>
+  <div class="header-part">
+    <div class="header__links">
+    {% for link in linklists.main-menu.links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% if linklists[child_list_handle].links != blank %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        [{% for childlink in linklists[child_list_handle].links %}
+        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+        {% endfor %}]
+      {% else %}
+        {% assign current_url = canonical_url | split: 'com' | last %}
+        {% unless request.path == link.url %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+    </div>
+    <a class="header__cart" href="/cart">Cart</a>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Site Header",
+    "tag": "header",
+    "settings": [
+        {
+            "type": "text",
+            "id": "svg_logo",
+            "label": "Logo SVG",
+            "info" : "Copier coller le SVG (Balises <svg></svg> et leur contenu)"
+        }
+    ]
+  }
+{% endschema %}

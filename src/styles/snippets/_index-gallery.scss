@@ -1,0 +1,20 @@
+.home__gallery {
+    
+  .home_titles {
+    &__label {}
+
+    &__title {}
+  }
+
+  .home__gallery_media {
+    .home__gallery__media__image {}
+  }
+
+  a {
+    &:hover {}
+
+    &:active {}
+
+    &:focus {}
+  }
+}

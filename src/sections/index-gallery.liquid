@@ -1,0 +1,63 @@
+
+<div class="home__gallery">
+    <div class="home_titles">
+        {% for collection in collections %}
+          {% unless collection.handle == 'frontpage' %}
+            {% assign collection_title = collection.title | escape %}
+            {% assign collection_description = collection.description %}
+            <div class="home_titles__label">Collection {% cycle "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" %}</div>
+            <div class="home_titles__title">{{ collection_title | remove: 'Collection' }}</div>
+          {% endunless %}
+        {% endfor %}
+    </div>
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'image' %}
+                {% assign Settings = block.settings %}
+                <figure class="home__gallery_media">
+                    <img class="home__gallery__media__image" src="{{ Settings.image | img_url:"master" }}" alt="{{ block.settings.image.alt }}" >
+                </figure>
+        {% endcase %}
+    {% endfor %}
+    <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+</div>
+
+
+{% schema %}
+{
+    "name": "Index Gallery",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Bouton Text",
+            "default": "Discover Collections"
+        },
+        {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Bouton URL"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Home",
+            "name":"Index Gallery"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,14 @@
+<section class="about__highlight" id="section-{{ id }}" data-section-id="section-{{ id }}">
+    <div class="about__highlight__wrapper">
+        <p class="about__highlight__label">{{ Settings.highlight-label }}</p>
+        <h3 class="about__highlight__title">{{ Settings.highlight-title }}</h3>
+
+        {% for image in (1..2) %}
+            {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+            {% assign imageKey = 'highlight-image-' | append : current %}
+            <figure class="about__highlight_media">
+                <img class="about__highlight_media__image" src="{{ Settings[imageKey] | img_url: "master" }}" alt="{{ Settings[imageKey].alt }}">
+            </figure>
+        {% endfor %}
+    </div>
+</section>

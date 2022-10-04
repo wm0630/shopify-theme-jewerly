@@ -1,0 +1,39 @@
+<style>
+    .preloader{
+        background-color: {{ section.settings.background-color }};
+        color: {{ section.settings.text-color }};
+    }
+</style>
+<div class="preloader">
+    <p class="preloader__text">
+       {{ section.settings.preloader-text | newline_to_br }}
+    </p>
+    <div class="preloader__number">0%</div>
+</div>
+
+{% schema %}
+{
+    "name": "Preloader",
+    "settings": [
+        {
+            "type": "textarea",
+            "id": "preloader-text",
+            "label": "Preloader Text",
+            "default": "Preloader text",
+            "placeholder": "Preloader text"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#C97164"
+        },
+        {
+            "type": "color",
+            "id": "text-color",
+            "label": "Text Color",
+            "default": "#fff"
+        }
+    ]
+}
+{% endschema %}

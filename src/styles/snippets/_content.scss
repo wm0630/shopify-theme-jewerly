@@ -1,0 +1,27 @@
+.about__content {
+    margin: 20rem auto;
+    position: relative;
+    width: 125.8rem;
+    &:first-child{
+        margin-top: 0;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+    &__wrapper {
+        display: flex;
+        position: relative;
+        .about__content__label {
+            width: 18rem;
+        }
+        .about__content__description {
+            width: 36.2rem;
+        }
+        .about__content__media {
+            // position: absolute;
+            &__image {
+
+            }
+        }
+    }
+}

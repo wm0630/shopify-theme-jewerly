@@ -1,0 +1,10 @@
+.header{
+    @extend %center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 4rem;
+    position: relative;
+    pointer-events: all;
+    user-select: all;
+    z-index: 999;
+}

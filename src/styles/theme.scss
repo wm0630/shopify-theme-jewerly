@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+
+@import 'base/reset';
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/responsive';
+
+@import 'mixins/titles';
+@import 'mixins/descriptions';
+
+@import 'base/fonts';
+@import 'utils/mixins';
+
+@import 'base/base';
+
+@import 'snippets/title';
+@import 'snippets/images-scroll';
+@import 'snippets/content';
+@import 'snippets/highlight';
+
+
+@import 'sections/preloader';
+@import 'sections/header';
+
+// @import 'pages/index';
+@import 'pages/product';
+@import 'pages/collections';
+
+

@@ -1,0 +1,87 @@
+<!-- /templates/product.liquid -->
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+<style>
+  .template-product{
+    background-color: {{ settings.color_product_bg }};
+  }
+</style>
+<div class="product">
+  <div class="product__wrapper">
+    {% for image in product.images %}
+      <figure class="product__media">
+        <img class="product__media__image" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}">
+      </figure>
+    {% endfor %}
+    <div class="product__information">
+      {% if collection %}
+        {% assign product_collection = collection %}
+      {% else %}
+        {% assign product_collection = product.collections.first %}
+      {% endif %}
+      {% unless product_collection == blank %}
+        <p class="product__information__collection">
+          {{ product_collection.title | link_to:product_collection.url }}
+        </p>
+      {% endunless %}
+      <h1 class="product__information__title">{{ product.title }}</h1>
+      <div class="product__information__content">
+        {% assign image_svg = product.metafields.extended-description.svg %}
+        {% assign description-text = product.metafields.extended-description.text %}
+        {% assign description-text_2 = product.metafields.arena.text-2 %}
+        {% assign icons_class = "product__information__highlight__icon" %}
+        {% if description-text != blank %}
+          <div class="product__information__highlights">
+            {% if description-text %}
+              <p class="product__information__highlight">
+                {% include 'icon-1' with Class: icons_class %}
+                <span class="product__information__highlight__text">{{ description-text  }}</span>
+              </p>
+            {% endif %}
+            {% if description-text_2 %}
+              <p class="product__information__highlight">
+                {% include 'icon-2' with Class: icons_class %}
+                <span class="product__information__highlight__text">{{ description-text_2 }}</span>
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="product__information__list">
+        {% if product.metafields.info-text.info-text %}
+          <p class="product__information__item">
+            <strong class="product__information__item__title">{{ product.metafields.info.info }}</strong>
+            <span class="product__information__item__description">{{ product.metafields.info-text.info-text | newline_to_br }}</span>
+          </p>
+        {% endif %}
+        {% if product.description != blank %}
+          <p class="product__information__item">
+            <strong class="product__information__item__title">YOU SHOULD KNOW</strong>
+            <span class="product__information__item__description">{{ product.description }}</span>
+          </p>
+        {% endif %}
+        </div>
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+          {%- capture default_title -%}{{ 'products.product.default_variant_title' | t }}{%- endcapture -%}
+          {% unless product.variants.size == 1 and product.variants.first.title contains 'Default Title' %}
+            <select name="id" id="productSelect">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option value="{{ variant.id }}">
+                    {{ variant.title }} - {{ variant.price | money_with_currency }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - sold out
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          {% endunless %}
+          <span class="current__price">{{ current_variant.price | money }}</span>
+          <input type="number" id="Quantity" name="quantity" value="1" min="1">
+          <button type="submit" name="add" id="AddToCart">Add to cart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

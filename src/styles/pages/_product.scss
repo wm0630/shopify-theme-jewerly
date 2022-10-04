@@ -1,0 +1,79 @@
+.product{
+    @extend %cover;
+    @extend %center;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        .product__media{
+            height: 78.2rem;
+            width: 55.4rem;
+            position: relative;
+            &:nth-child(2){
+                display: none;
+            }
+            // &__image{
+
+            // }
+        }
+        .product__information{
+            &__collection{
+                @extend %description-12;
+                text-transform: uppercase;
+                margin-bottom: 4rem
+            }
+            &__title{
+                @extend %title-120;
+                max-width: 60rem;
+            }
+            &__content{
+                padding-left: 18rem;
+                .product__information__highlights{
+                    margin-top: 5rem;
+                    .product__information__highlight{
+                        align-items: center;
+                        display: flex;
+                        &:not(:first-child){
+                            margin-top: 4rem;
+                        }
+                        svg{
+                            width: 4rem;
+                            height: 4rem;
+                            margin-right: 3.75rem;
+                        }
+                        &__text{
+                            @extend %description-16;
+
+                        }
+                    }
+                }
+                .product__information__list{
+                    margin-top: 4rem;
+                    .product__information__item{
+                        display: flex;
+                        &:not(:first-child){
+                            margin-top: 4rem;
+                        }
+                        &__title{
+                            @extend %description-12;
+                            padding-right: 2.5rem;
+                            width: 10rem;
+                            opacity: .5;
+                        }
+                        &__description{
+                            @extend %description-16;
+                            max-width: 44rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#AddToCart{
+    @extend %title-30;
+    margin-top: 3rem;
+    &::after{
+        content: " ↗";
+    }
+}

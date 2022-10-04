@@ -1,0 +1,22 @@
+.about__gallery {
+		height: 58.6rem;
+		position: relative;
+		overflow: hidden;
+		&__wrapper {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			top: 50%;
+			transform: translateY(-50%);
+			.about__gallery_media {
+				height: 43.7rem;
+				margin: 0 4rem;
+				position: relative;
+				width: 30.9rem;
+				&__image {
+					@extend %cover;
+
+				}
+		}
+	}
+}

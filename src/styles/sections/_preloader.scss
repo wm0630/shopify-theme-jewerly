@@ -1,0 +1,18 @@
+.preloader{
+    display: none;
+    z-index: 9999;
+    @extend %cover;
+    @extend %center;
+    text-align: center;
+    &__text{
+        @extend %title-53;
+        max-width: 66rem;
+
+    }
+    &__number{
+        @extend %description-14;
+        position: absolute;
+        bottom: 7.3rem;
+        transform: translateX(-50%);
+    }
+}

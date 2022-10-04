@@ -1,0 +1,11 @@
+<section class="about__gallery" id="section-{{ id }}" data-section-id="section-{{ id }}">
+    <div class="about__gallery__wrapper">
+        {% for image in (1..7) %}
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6, 7 %}{% endcapture %}
+            {% assign imageKey = 'image_' | append : current %}
+            <figure class="about__gallery_media">
+                <img class="about__gallery_media__image" src="{{ Settings[imageKey] | img_url: "2048x1536" }}" alt="{{ Settings[imageKey].alt }}">
+            </figure>
+        {% endfor %}
+    </div>
+</section>

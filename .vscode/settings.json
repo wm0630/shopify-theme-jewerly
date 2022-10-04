@@ -1,0 +1,12 @@
+{
+    "workbench.activityBar.visible": false,
+    "html.validate.scripts": false,
+    "html.validate.styles": false,
+    "git.ignoreLimitWarning": true,
+    // "files.associations": {
+    //     "*.scss.liquid": "scss",
+    //     "*.css.liquid": "css",
+    //     "*.js.liquid": "js"
+    // }
+}
+

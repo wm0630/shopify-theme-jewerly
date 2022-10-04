@@ -1,0 +1,9 @@
+<section class="about__content" id="section-{{ id }}" data-section-id="section-{{ id }}">
+    <div class="about__content__wrapper">
+        <p class="about__content__label">{{ Settings.content-label }}</p>
+        <div class="about__content__description">{{ Settings.content-description }}</div>
+        <figure class="about__content__media">
+            <img class="about__content__media__image" src="{{ Settings.content-image | img_url: 'master' }}" alt="{{ Settings.content-image.alt }}">
+        </figure>
+    </div>
+</section>

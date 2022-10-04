@@ -1,0 +1,18 @@
+.about__title {
+    @extend %title-100;
+    line-height: 1;
+    max-width: 107.4rem;
+    margin: auto;
+    text-align: center;
+    margin: 20rem auto;
+    position: relative;
+    &:first-child{
+        margin-top: 0;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+    h2 {
+
+    }
+}

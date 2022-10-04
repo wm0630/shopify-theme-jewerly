@@ -1,0 +1,53 @@
+/**
+ * Insert your styles with Liquid below.
+ * CSS only! Shopify is deprecating sass
+ * @see https://www.shopify.com/partners/blog/deprecating-sass
+ */
+
+ body{
+     background-color: {{ settings.color_main_bg }};
+ }
+h1{
+    color: {{ settings.color_text }};
+}
+
+/* Font face */
+@font-face {
+    font-family: 'George X';
+    src: local('George X Regular'), local('GeorgeX-Regular'),
+        url('{{ "GeorgeX-Regular.woff2" | asset_url }}') format('woff2'),
+        url('{{ "GeorgeX-Regular.woff" | asset_url }}') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse BP Intl';
+    src: local('Suisse BP Int\'l Regular'), local('SuisseBPIntl-Regular'),
+        url('{{ "SuisseBPIntl-Regular.woff2" | asset_url }}') format('woff2'),
+        url('{{ "SuisseBPIntl-Regular.woff" | asset_url }}') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse BP Intl';
+    src: local('Suisse BP Int\'l UltraLight'), local('SuisseBPIntl-UltraLight'),
+        url('{{ "SuisseBPIntl-UltraLight.woff2" | asset_url }}') format('woff2'),
+        url('{{ "SuisseBPIntl-UltraLight.woff" | asset_url }}') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse BP Intl';
+    src: local('Suisse BP Int\'l Light'), local('SuisseBPIntl-Light'),
+        url('{{ "SuisseBPIntl-Light.woff2" | asset_url }}') format('woff2'),
+        url('{{ "SuisseBPIntl-Light.woff" | asset_url }}') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}

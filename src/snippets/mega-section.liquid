@@ -1,0 +1,13 @@
+{% for block in section.blocks %}
+    {% if block.type == 'images-scroll' %}
+        {% include 'images-scroll' with Settings: block.settings, id: block.id %}
+
+    {% elsif block.type == 'title' %}
+        {% include 'title' with Settings: block.settings, id: block.id %}
+    
+    {% elsif block.type == 'content' %}
+        {% include 'content' with Settings: block.settings, id: block.id %}
+    {% elsif block.type == 'highlight' %}
+        {% include 'highlight' with Settings: block.settings, id: block.id %}
+    {% endif %}
+{% endfor %}

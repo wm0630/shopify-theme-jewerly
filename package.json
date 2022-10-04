@@ -1,0 +1,66 @@
+{
+  "name": "packer-blank-theme",
+  "version": "1.0.13",
+  "description": "Blank starting point with all the required files to upload to Shopify using Packer",
+  "main": "index.js",
+  "keywords": [
+    "shopify",
+    "theme"
+  ],
+  "browserslist": [
+    "defaults"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hayes0724/packer-blank-theme.git"
+  },
+  "scripts": {
+    "start": "packer start",
+    "watch": "packer start --skipFirstDeploy",
+    "build": "packer build",
+    "analyze": "packer build --analyze",
+    "deploy": "packer build && packer deploy",
+    "download": "packer download",
+    "zip": "packer build && packer zip",
+    "lint": "packer lint",
+    "format": "packer format"
+  },
+  "author": "Hayes Marketing Inc",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-async-to-generator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@shopify/babel-preset": "^23.1.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "cssnano-preset-default": "^4.0.7",
+    "eslint-plugin-shopify": "^35.1.0",
+    "glslify-loader": "^2.0.0",
+    "include-media": "^1.4.10",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-shopify": "^7.4.0",
+    "stylelint-scss": "^3.18.0"
+  },
+  "changelog": {
+    "repo": "@hayes0724/packer-blank-theme",
+    "labels": {
+      "feat": ":rocket: Feature",
+      "fix": ":bug: Bug Fix",
+      "docs": ":memo: Documentation",
+      "test": ":memo: Tests",
+      "build": ":memo: Build",
+      "refactor": ":memo: Refactor",
+      "style": ":memo: Style",
+      "internal": ":house: Internal",
+      "config": ":wrench Config"
+    },
+    "cacheDir": ".changelog"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "nodelist-foreach-polyfill": "^1.2.0"
+  }
+}

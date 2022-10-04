@@ -1,0 +1,128 @@
+{% include 'mega-section' %}
+
+{% schema %}
+{
+    "name": "Mega Section About",
+    "settings": [
+        
+    ],
+    "blocks": [
+        {
+            "type": "images-scroll",
+            "name": "Images scroll",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image_1",
+                    "label": "Image 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_2",
+                    "label": "Image 2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_3",
+                    "label": "Image 3"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_4",
+                    "label": "Image 4"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_5",
+                    "label": "Image 5"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_6",
+                    "label": "Image 6"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_7",
+                    "label": "Image 7"
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "name": "Title",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "about-title",
+                    "label": "Title",
+                    "default": "Title"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "name": "Content",
+            "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "is-reversed",
+                    "label": "Reversed ?",
+                    "default": false,
+                    "info": "Check if you want to reverse the image position"
+                },
+                {
+                    "type": "text",
+                    "id": "content-label",
+                    "label": "Label",
+                    "default": "ABOUT"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content-description",
+                    "label": "Description"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "content-image",
+                    "label": "Image"
+                }
+            ]
+        },
+        {
+            "type": "highlight",
+            "name": "Highlight",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "highlight-label",
+                    "label": "Label",
+                    "default": "Label"
+                },
+                {
+                    "type": "text",
+                    "id": "highlight-title",
+                    "label": "Title",
+                    "default": "Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "highlight-image-1",
+                    "label": "Image"
+                },
+                    {
+                    "type": "image_picker",
+                    "id": "highlight-image-2",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "About",
+            "name":"Section About"
+        }
+    ]
+}
+{% endschema %}
